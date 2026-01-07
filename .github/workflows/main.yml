@@ -1,0 +1,46 @@
+name: QA Automation Pipeline (Java + Gradle)
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+    branches:
+      - main
+      - master
+
+jobs:
+  automation-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout repository
+      - name: Checkout source code
+        uses: actions/checkout@v4
+
+      # Setup Java
+      - name: Set up JDK 11
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '11'
+
+      # Setup Chrome for Selenium
+      - name: Set up Chrome
+        uses: browser-actions/setup-chrome@v1
+
+      # Grant permission to Gradle wrapper
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+
+      # Run automation tests
+      - name: Run Automation Tests
+        run: ./gradlew clean test
+
+      # Upload test report
+      - name: Upload Test Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: automation-test-report
+          path: build/reports/tests/test/

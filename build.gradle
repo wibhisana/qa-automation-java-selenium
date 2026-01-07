@@ -1,0 +1,38 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.qa.automation'
+version = '1.0'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(11)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    // Selenium
+    testImplementation 'org.seleniumhq.selenium:selenium-java:4.16.1'
+
+    // TestNG
+    testImplementation 'org.testng:testng:7.8.0'
+
+    // REST Assured
+    testImplementation 'io.rest-assured:rest-assured:5.4.0'
+
+    // JSON
+    testImplementation 'org.json:json:20231013'
+}
+
+test {
+    useTestNG()
+    reports {
+        html.required = true
+    }
+}
