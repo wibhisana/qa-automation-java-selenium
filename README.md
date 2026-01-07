@@ -17,19 +17,6 @@ and is fully integrated with **GitHub Actions CI/CD**.
 
 ---
 
-## 📁 Project Structure
-
-src/test/java
-└── com/qa/automation
-├── api
-│ └── ApiTest.java
-├── base
-│ └── BaseTest.java
-└── ui
-└── LoginTest.java
-
----
-
 ## 🧪 Test Coverage
 
 ### API Automation
