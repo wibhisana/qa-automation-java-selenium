@@ -18,3 +18,33 @@ and is fully integrated with **GitHub Actions CI/CD**.
 ---
 
 ## 📁 Project Structure
+
+src/test/java
+└── com/qa/automation
+├── api
+│ └── ApiTest.java
+├── base
+│ └── BaseTest.java
+└── ui
+└── LoginTest.java
+
+---
+
+## 🧪 Test Coverage
+
+### API Automation
+- Send GET request to public API
+- Validate API accessibility
+- Log response status
+
+### UI Automation
+- Open website using Selenium
+- Validate page title
+- Executed using headless Chrome
+
+---
+
+## ▶️ How to Run Tests Locally
+
+```bash
+./gradlew clean test
