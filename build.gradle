@@ -28,6 +28,9 @@ dependencies {
 
     // JSON
     testImplementation 'org.json:json:20231013'
+
+    // Allure TestNG Adapter
+    testImplementation 'io.qameta.allure:allure-testng:2.25.0'
 }
 
 test {
